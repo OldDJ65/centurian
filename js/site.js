@@ -58,6 +58,7 @@ function displayNumbers(numbers){
             className = "odd";
         }
 
+        //The following code does not render correctly in Prism. See the source for the full statement.
         templateRows += `<tr><td class="${className}">${number}</td></tr>`;
     }
 
