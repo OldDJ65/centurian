@@ -58,22 +58,88 @@
     <!-- ==== Main Section ==== -->
     <main class="flex-shrink-0">
         <div class="container pb-4 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for THE CENTURIAN</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for <span class="logoFont">THE CENTURIAN</span></h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function HelloWorld() {
-                            alert("Hello World");
+                        //get the values from the Page
+                        //starts or controller function
+                        function getValues(){
+                            //get values from the page
+                            let startValue = document.getElementById("startValue").value;
+                            let endValue = document.getElementById("endValue").value;
+                        
+                            //we need to validate our input
+                            //parse int Integers
+                            startValue = parseInt(startValue);
+                            endValue = parseInt(endValue);
+                        
+                            if (Number.isInteger(startValue) && Number.isInteger(endValue)){
+                                //we call generateNumbers
+                                let numbers = generateNumbers(startValue,endValue);
+                                //we call displayNumbers
+                                displayNumbers(numbers);
+                        
+                            }else{
+                                alert("You must enter integers");
+                            }
+                        
                         }
-                        </code>
+                        
+                        //generate numbers from the start value to the end value
+                        //logic function(s)
+                        function generateNumbers(sValue, eValue){
+                            let numbers = [];
+                        
+                        
+                            //we want to get all numbers from start to end
+                            for (let index = sValue; index <= eValue; index++) {
+                        
+                                //this condition will execute in a look until index = evalue
+                                numbers.push(index);
+                            }
+                        
+                        
+                            return numbers;
+                        
+                        }
+                        
+                        //display the numbers and mark the even numbers in bold
+                        //display or view functions
+                        function displayNumbers(numbers){
+                        
+                            let templateRows = "";
+                        
+                            for (let index = 0; index < numbers.length; index++) {
+                        
+                                let className = "even";
+                                let number = numbers[index];
+                        
+                                if(number % 2 == 0){
+                                    className = "even";
+                                }
+                                else{
+                                    className = "odd";
+                                }
+                        
+                                templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+                            }
+                        
+                            document.getElementById("results").innerHTML = templateRows;
+                        }
+                    </code>
                     </pre>
 
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World".</p>
+                    <p>The Code is structured in three functions.</p>
+                    <h5>getValues()</h5>
+                    <p>getValues() is a function that sets and verifies the starting and ending numbers based on user input".</p>
+                    <h5>generateNumbers(sValue, eValue)</h5>
+                    <p>generateNumbers(sValue, eValue) is a function that creates the string of numbers using the verified starting and ending numbers as boundaries".</p>
+                    <h5>displayNumbers(numbers)</h5>
+                    <p>displayNumbers(numbers) is a function that creates and formats the individual rows. Even numbers will be formatted in bold text".</p>
+
                 </div>
             </div>
         </div>
