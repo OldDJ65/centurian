@@ -31,7 +31,7 @@ function generateNumbers(sValue, eValue){
     //we want to get all numbers from start to end
     for (let index = sValue; index <= eValue; index++) {
 
-        //this condition will execute in a look until index = evalue
+        //this condition will execute in a loop until index = evalue
         numbers.push(index);
     }
 
@@ -58,7 +58,7 @@ function displayNumbers(numbers){
             className = "odd";
         }
 
-        //The following code does not render correctly in Prism. See the source for the full statement.
+        //The following code does not render correctly in Prism. Use the escape codes for < (&lt;) and & (&amp;.
         templateRows += `<tr><td class="${className}">${number}</td></tr>`;
     }
 

@@ -95,7 +95,7 @@
                             //we want to get all numbers from start to end
                             for (let index = sValue; index <= eValue; index++) {
                         
-                                //this condition will execute in a look until index = evalue
+                                //this condition will execute in a loop until index = evalue
                                 numbers.push(index);
                             }
                         
@@ -122,8 +122,7 @@
                                     className = "odd";
                                 }
                         
-                                //The following code does not render correctly in Prism. See the source for the full statement.
-                                templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+                                templateRows += `&lt;tr>&lt;td class="${className}">${number}&lt;/td>&lt;/tr>
                             }
                         
                             document.getElementById("results").innerHTML = templateRows;

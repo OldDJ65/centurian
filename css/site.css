@@ -81,7 +81,9 @@ code[class*="language-"],
 
 main>.container {
     padding: 60px 15px 0;
-    margin-bottom: 5rem;
+/* update for larger footer */
+/*   margin-bottom: 2rem; */
+    margin-bottom: 2rem;
 }
 .sticky-nav {
     position: fixed;
